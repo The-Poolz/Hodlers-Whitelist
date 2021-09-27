@@ -1,0 +1,22 @@
+{
+  "name": "hodlers-whitelist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Poolz/Hodlers-Whitelist.git"
+  },
+  "author": "Ashwin Arora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Poolz/Hodlers-Whitelist/issues"
+  },
+  "homepage": "https://github.com/The-Poolz/Hodlers-Whitelist#readme"
+}
