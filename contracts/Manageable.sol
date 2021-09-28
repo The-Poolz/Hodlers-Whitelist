@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 import "poolz-helper/contracts/GovManager.sol";
 
 contract Manageable is GovManager {
-    event NewWhiteList(uint _WhiteListCount, address _creator, uint _changeUntil);
+    event NewWhiteList(uint _WhitelistId, address _creator, uint _changeUntil);
 
     modifier OnlyCreator(uint256 _Id) {
         require(
@@ -38,7 +38,7 @@ contract Manageable is GovManager {
     uint256 public WhiteListCount;
     uint256 public MainWhitelistId;
 
-    function _SetMainWhitelistId(uint256 _Id) external onlyOwnerOrGov {
+    function SetMainWhitelistId(uint256 _Id) external onlyOwnerOrGov {
         MainWhitelistId = _Id;
     }
 

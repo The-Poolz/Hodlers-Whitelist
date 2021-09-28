@@ -5,7 +5,7 @@ import "./Manageable.sol";
 
 contract HodlersWhitelist is Manageable {
     constructor() public {
-        MaxUsersLimit = 5000;
+        MaxUsersLimit = 600;
     }
     
     uint256 public MaxUsersLimit;
