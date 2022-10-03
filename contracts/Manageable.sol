@@ -42,7 +42,6 @@ contract Manageable is GovManager {
         external
         onlyOwnerOrGov
         ValidateId(_Id)
-
     {
         MainWhitelistId = _Id;
     }
