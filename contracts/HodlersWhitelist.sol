@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+pragma solidity ^0.8.0;
 
 import "./Manageable.sol";
 
 contract HodlersWhitelist is Manageable {
-    constructor() public {
+    constructor() {
         MaxUsersLimit = 600;
     }
     

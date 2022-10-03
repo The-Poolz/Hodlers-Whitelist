@@ -18,8 +18,8 @@
  *
  */
 
- const HDWalletProvider = require("@truffle/hdwallet-provider");
- const { mnemonic, rinkebyInfuraEndpoint, etherscanKey } = require("./secret");
+//  const HDWalletProvider = require("@truffle/hdwallet-provider");
+//  const { mnemonic, rinkebyInfuraEndpoint, etherscanKey } = require("./secret");
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -86,22 +86,7 @@ module.exports = {
   mocha: {
     // timeout: 100000
   },
-
-  // Configure your compilers
-  compilers: {
-    solc: {
-      // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
-      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      //  optimizer: {
-      //    enabled: false,
-      //    runs: 200
-      //  },
-      //  evmVersion: "byzantium"
-      // }
-    }
-  },
-
+  
   // Truffle DB is currently disabled by default; to enable it, change enabled: false to enabled: true
   //
   // Note: if you migrated your contracts prior to enabling this field in your Truffle project and want
@@ -118,7 +103,7 @@ module.exports = {
         evmVersion: "byzantium",
         optimizer: { enabled: true, runs: 200 },
       },     
-      version: "^0.6.0",
+      version: "pragma",
       docker: false,
       parser: "solcjs",
     }
