@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
+pragma solidity ^0.8.0;
 
-import "poolz-helper/contracts/GovManager.sol";
+import "poolz-helper-v2/contracts/GovManager.sol";
 
 contract Manageable is GovManager {
     event NewWhiteList(uint _WhitelistId, address _creator, uint _changeUntil);
@@ -16,7 +16,7 @@ contract Manageable is GovManager {
 
     modifier TimeRemaining(uint256 _Id){
         require(
-            now < WhitelistSettings[_Id].ChangeUntil,
+            block.timestamp < WhitelistSettings[_Id].ChangeUntil,
             "Time for edit is finished"
         );
         _;
@@ -38,7 +38,11 @@ contract Manageable is GovManager {
     uint256 public WhiteListCount;
     uint256 public MainWhitelistId;
 
-    function SetMainWhitelistId(uint256 _Id) external onlyOwnerOrGov {
+    function SetMainWhitelistId(uint256 _Id)
+        external
+        onlyOwnerOrGov
+        ValidateId(_Id)
+    {
         MainWhitelistId = _Id;
     }
 
