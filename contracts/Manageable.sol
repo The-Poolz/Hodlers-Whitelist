@@ -38,7 +38,11 @@ contract Manageable is GovManager {
     uint256 public WhiteListCount;
     uint256 public MainWhitelistId;
 
-    function SetMainWhitelistId(uint256 _Id) external onlyOwnerOrGov {
+    function SetMainWhitelistId(uint256 _Id)
+        external
+        onlyOwnerOrGov
+        ValidateId(_Id)
+    {
         MainWhitelistId = _Id;
     }
 
