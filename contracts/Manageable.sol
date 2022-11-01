@@ -54,10 +54,6 @@ contract Manageable is GovManager {
         WhitelistDB[_Id][user] = false;
     }
 
-    function isWhiteListReady(uint256 _Id) external view returns(bool){
-        return WhitelistSettings[_Id].isReady;
-    }
-
     function IsPOZHolder(address _Sender) external view returns(bool){
         return WhitelistDB[MainWhitelistId][_Sender];
     }
