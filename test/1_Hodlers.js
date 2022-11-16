@@ -24,8 +24,8 @@ contract('Hodlers Whitelist', accounts => {
     })
 
     it('isReady is false before adding the first address', async () => {
-        const isReady = await instance.isWhiteListReady(whitelistId)
-        assert.isFalse(isReady)
+        const result = await instance.WhitelistSettings(whitelistId)
+        assert.isFalse(result.isReady)
     })
 
     it('should set main whitelist ID', async () => {
@@ -52,8 +52,8 @@ contract('Hodlers Whitelist', accounts => {
     })
 
     it('isReady is true after adding the first address', async () => {
-        const isReady = await instance.isWhiteListReady(whitelistId)
-        assert.isTrue(isReady)
+        const result = await instance.WhitelistSettings(whitelistId)
+        assert.isTrue(result.isReady)
     })
 
     it('reverts when called by non creator address', async () => {
